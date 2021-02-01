@@ -75,25 +75,25 @@ export default {
     return openDialog({
       android: [
         [
-          '使用高德地图打开',
+          '高德地图',
           `androidamap://viewMap?sourceApplication=${this.options.appName}&poiname=${title}&lat=${location.lat}&lon=${location.lng}&dev=${location.type === 'gcj02' ? '0' : '1'}`,
         ],
         [
-          '使用百度地图打开',
+          '百度地图',
           `bdapp://map/marker?location=${location.lat},${location.lng}&coord_type=${location.type === 'gcj02' ? 'gcj02' : 'wgs84'}&title=${title}&content=${content}&src=${this.options.appName}`,
         ]
       ],
       ios: [
         [
-          '使用高德地图打开',
+          '高德地图',
           `iosamap://viewMap?sourceApplication=${this.options.appName}&poiname=${title}&lat=${location.lat}&lon=${location.lng}&dev=${location.type === 'gcj02' ? '0' : '1'}`,
         ],
         [
-          '使用百度地图打开',
+          '百度地图',
           `baidumap://map/marker?location=${location.lat},${location.lng}&coord_type=${location.type === 'gcj02' ? 'gcj02' : 'wgs84'}&title=${title}&content=${content}&src=${this.options.appName}`,
         ],
         [
-          '使用iOS系统地图打开',
+          'Apple 地图',
           `http://maps.apple.com/?ll=${location.lat},${location.lng}&q=${title}`,
         ],
       ],
@@ -111,25 +111,25 @@ export default {
     return openDialog({
       android: [
         [
-          '使用高德地图规划路线',
+          '高德地图',
           `androidamap://route?sourceApplication=${this.options.appName}&slat=${srcLocation && srcLocation.lat}&slon=${srcLocation && srcLocation.lng}&sname=${srcLocation && srcLocation.title}&dlat=${distLocation.lat}&dlon=${distLocation.lng}&dname=${distLocation.title}&dev=${distLocation.type === 'gcj02' ? '0' : '1'}&m=0&t=${mode === 'drive' ? '2' : (mode === 'bus' ? '1' : '4')}`,
         ],
         [
-          '使用百度地图规划路线',
+          '百度地图',
           `bdapp://map/direction?origin=${srcLocation ? (srcLocation.lat + ',' + srcLocation.lng) : ''}&destination=${distLocation.lat},${distLocation.lng}&mode=${mode === 'drive' ? 'driving' : (mode === 'bus' ? 'transit' : 'walking')}&coord_type=${distLocation.type === 'gcj02' ? 'gcj02' : 'wgs84'}&src=${this.options.appName}`,
         ]
       ],
       ios: [
         [
-          '使用高德地图规划路线',
+          '高德地图',
           `iosamap://path?sourceApplication=${this.options.appName}&slat=${srcLocation && srcLocation.lat}&slon=${srcLocation && srcLocation.lng}&sname=${srcLocation && srcLocation.title}&dlat=${distLocation.lat}&dlon=${distLocation.lng}&dname=${distLocation.title}&dev=${distLocation.type === 'gcj02' ? '0' : '1'}&t=${mode === 'drive' ? '0' : (mode === 'bus' ? '1' : '2')}`,
         ],
         [
-          '使用百度地图规划路线',
+          '百度地图',
           `baidumap://map/direction?origin=${srcLocation ? (srcLocation.lat + ',' + srcLocation.lng) : ''}&destination=${distLocation.lat},${distLocation.lng}&mode=${mode === 'drive' ? 'driving' : (mode === 'bus' ? 'transit' : 'walking')}&coord_type=${distLocation.type === 'gcj02' ? 'gcj02' : 'wgs84'}&src=${this.options.appName}`,
         ],
         [
-          '使用iOS系统地图规划路线',
+          'Apple 地图',
           `http://maps.apple.com/?ll=${distLocation.lat},${distLocation.lng}&q=${distLocation.title}&dirflg=${mode === 'drive' ? 'd' : (mode === 'bus' ? 'r' : 'w')}`,
         ],
       ],
@@ -145,25 +145,25 @@ export default {
     return openDialog({
       android: [
         [
-          '使用高德地图导航',
+          '高德地图',
           `androidamap://navi?sourceApplication=${this.options.appName}&poiname=${distLocation.title}&lat=${distLocation.lat}&lon=${distLocation.lng}&dev=${distLocation.type === 'gcj02' ? '0' : '1'}`,
         ],
         [
-          '使用百度地图导航',
+          '百度地图',
           `bdapp://map/direction?origin=&destination=${distLocation.lat},${distLocation.lng}&mode=driving&coord_type=${distLocation.type === 'gcj02' ? 'gcj02' : 'wgs84'}&src=${this.options.appName}`,
         ]
       ],
       ios: [
         [
-          '使用高德地图导航',
+          '高德地图',
           `iosamap://navi?sourceApplication=${this.options.appName}&poiname=${distLocation.title}&lat=${distLocation.lat}&lon=${distLocation.lng}&dev=${distLocation.type === 'gcj02' ? '0' : '1'}`,
         ],
         [
-          '使用百度地图导航',
+          '百度地图',
           `baidumap://map/direction?origin=&destination=${distLocation.lat},${distLocation.lng}&mode=driving&coord_type=${distLocation.type === 'gcj02' ? 'gcj02' : 'wgs84'}&src=${this.options.appName}`,
         ],
         [
-          '使用iOS系统地图导航',
+          'Apple 地图',
           `http://maps.apple.com/?ll=${distLocation.lat + ',' + distLocation.lng}&q=${distLocation.title}&dirflg=d`,
         ],
       ],
