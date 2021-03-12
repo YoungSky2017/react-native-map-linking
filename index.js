@@ -10,15 +10,17 @@ function openDialog(urls) {
         // 系统内没有任何地图, 推荐下载一个
         if (choices.length < 1) {
           return ActionSheetIOS.showActionSheetWithOptions({
-            options: ['下载高德地图', '下载百度地图', '取消'],
-            cancelButtonIndex: 2,
+            // options: ['下载高德地图', '下载百度地图', '取消'],
+            options: ['下载高德地图', '取消'],
+            cancelButtonIndex: 1,
             title: '选择地图',
           }, buttonIndex => {
             if (buttonIndex === 0) {
               Linking.openURL('https://itunes.apple.com/cn/app/gao-tu-zhuan-ye-shou-ji-tu/id461703208?mt=8');
-            } else if (buttonIndex === 1) {
-              Linking.openURL('https://itunes.apple.com/cn/app/bai-du-tu-shou-ji-tu-lu-xian/id452186370?mt=8');
             }
+            // else if (buttonIndex === 1) {
+            //   Linking.openURL('https://itunes.apple.com/cn/app/bai-du-tu-shou-ji-tu-lu-xian/id452186370?mt=8');
+            // }
           });
         }
 
@@ -47,7 +49,7 @@ function openDialog(urls) {
         if (choices.length < 1) {
           return Alert.alert('选择地图', '您还没有安装地图软件。', [
             { text: '下载高德地图', onPress: () => Linking.openURL('http://mobile.amap.com') },
-            { text: '下载百度地图', onPress: () => Linking.openURL('http://map.baidu.com') },
+            // { text: '下载百度地图', onPress: () => Linking.openURL('http://map.baidu.com') },
             { text: '取消' }
           ]);
         }
